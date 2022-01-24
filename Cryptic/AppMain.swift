@@ -36,7 +36,9 @@ import SwiftUI
 struct AppMain: App {
   var body: some Scene {
     WindowGroup {
-			AssetListView(assetListViewModel: AssetListViewModel())
+      //Resolver takes the responsibility of registering and calling this dependency for AssetListView
+      AssetListView()
+			//AssetListView(assetListViewModel: AssetListViewModel())
     }
   }
 }

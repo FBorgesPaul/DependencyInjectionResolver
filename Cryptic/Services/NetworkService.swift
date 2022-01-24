@@ -39,16 +39,8 @@ import UIKit
 
 // MARK: - NetworkService
 class NetworkService {
-	//private let session = URLSession(configuration: .default)
   
-  private var session: URLSession
-  
-  init(session: URLSession) {
-    self.session = session
-  }
-//  Remove the URLSession constructor and make the session mutable.
-//  Create an initializer for NetworkService and receive the session as a dependency.
-//  Update the local session variable with the newly received value from the initializer.
+  @Injected private var session: URLSession
   
 }
 

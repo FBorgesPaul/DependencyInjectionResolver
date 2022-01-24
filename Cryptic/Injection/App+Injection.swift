@@ -32,3 +32,18 @@
 
 import Foundation
 import Resolver
+
+
+extension Resolver: ResolverRegistering {
+  public static func registerAllServices() {
+    register { URLSession(configuration: .default) }
+    register { NetworkService() }
+    register { URLComponentsService() }
+    register { AssetService() }
+    register { AssetListViewModel() }
+    //Registering a dependency with an argument:
+    register { _, args in
+      AssetViewModel(asset: args())
+    }
+  }
+}

@@ -38,13 +38,10 @@ import Resolver
 
 // MARK: - AssetService
 class AssetService {
-  //Changin this:
-	//private let networkService = NetworkService()
-  //With this:
-  private let networkService = NetworkService(session: URLSession(configuration: .default))
-  //
-  
-	private let urlComponentsService = URLComponentsService()
+ 
+  @Injected private var networkService: NetworkService
+ 
+  @Injected private var urlComponentsService: URLComponentsService
 }
 
 extension AssetService {
